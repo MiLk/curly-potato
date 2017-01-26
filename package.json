@@ -1,0 +1,22 @@
+{
+  "name": "curly-potato",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MiLk/curly-potato.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MiLk/curly-potato/issues"
+  },
+  "homepage": "https://github.com/MiLk/curly-potato#readme",
+  "dependencies": {
+    "express": "^4.14.0"
+  }
+}
