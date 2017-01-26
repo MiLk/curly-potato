@@ -10,8 +10,16 @@ const port = process.env.PORT || 3000
 app.listen(port, () => {
   console.log('Example app listening on port %d !', port)
   const consul = require('./consul')
-  consul.register('curly-potato', port)
+  const name = 'curly-potato'
+  const id = name + '-' + process.pid + '-' + port
+  consul.register({
+    id, name, port: parseInt(port)
+  })
     .then(() => { console.log('Service registered into consul.') })
     .catch(console.error)
+
+  process.on('beforeExit', () => {
+    consul.deregister({ id })
+  })
 })
 
